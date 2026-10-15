@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="mn" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Тал нутгийн зургийн цомог</title>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.replace("no-js", "js");
+      try {
+        var saved = localStorage.getItem("theme");
+        if (saved === "dark" || saved === "light") root.setAttribute("data-theme", saved);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;600&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z" fill="currentColor"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="4.5" fill="currentColor"/>
+      <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/>
+      </g>
+    </symbol>
+    <symbol id="i-flip" viewBox="0 0 24 24">
+      <path d="M4 12a8 8 0 0 1 13.7-5.6L20 8.7M20 4v4.7h-4.7M20 12a8 8 0 0 1-13.7 5.6L4 15.3M4 20v-4.7h4.7"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+  </svg>
+
+  <a class="skip" href="#gallery">Үндсэн агуулга руу очих</a>
+
+  <header class="header">
+    <a class="logo" href="#home">My web
+    </a>
+
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Цэс нээх/хаах">
+
+    <nav class="nav" aria-label="Үндсэн цэс">
+      <ul>
+        <li><a href="#home">Нүүр</a></li>
+        <li><a href="#gallery">Цомог</a></li>
+        <li><a href="#video">Бичлэг</a></li>
+        <li><a href="#map">Байршил</a></li>
+      </ul>
+    </nav>
+
+    <button class="theme-btn" id="theme-btn" type="button" aria-label="Харанхуй горимд шилжих">
+      <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+      <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+    </button>
+
+    <label for="menu-toggle" class="burger" aria-hidden="true"><span></span><span></span></label>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-text">
+        <h1>Тал нутгийн зургийн цомог</h1>
+        <p>Зургийг эргүүлж, цаана нь бичсэн тэмдэглэлийг уншаарай. Гар утаснаас том дэлгэц хүртэл, хөдөлгөөнийг багасгасан тохиргоотой ч ажиллана.</p>
+        <a href="#gallery" class="btn">Цомгийг үзэх</a>
+      </div>
+
+      <svg class="landscape" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+        <circle class="sun" cx="900" cy="190" r="110" fill="#FFB000"/>
+        <path d="M0 210 C150 150 300 190 450 170 C650 140 800 200 1000 165 C1100 150 1150 170 1200 175 L1200 300 L0 300 Z" fill="#3E66EA"/>
+        <path d="M0 250 C200 205 380 245 600 225 C800 205 1000 250 1200 220 L1200 300 L0 300 Z" fill="#5F8A3C"/>
+        <path class="snow" d="M0 280 C250 255 500 285 750 268 C950 255 1100 275 1200 266 L1200 300 L0 300 Z"/>
+      </svg>
+    </section>
+
+    <section id="gallery" class="section" aria-labelledby="gallery-title">
+      <h2 id="gallery-title">Зургийн цомог</h2>
+      <p class="section-lead">Карт бүр дээрх товчийг дарж эргүүлнэ. Товч дээр Tab-аар очоод Enter эсвэл Space дарахад мөн ажиллана.</p>
+
+      <ul class="gallery">
+        <li class="flip" style="--i:0">
+          <div class="flip-inner">
+            <figure class="face front">
+              <img src="img/photo1.jpg" width="800" height="600" alt="Улбар шар тэнгэр, хөх уулсын ард нар мандаж байна" loading="lazy">
+              <figcaption>Үүр цайх</figcaption>
+            </figure>
+            <div class="face back">
+              <h3>Үүр цайх</h3>
+              <p>Дорнод тэнгэр улбар шараар гэрэлтэж, нар уулсын ард гарч ирж буй мөч.</p>
+            </div>
+          </div>
+          <button class="flip-btn" type="button" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-flip"/></svg><span>Эргүүлэх</span><span class="sr-only"> – Үүр цайх</span></button>
+        </li>
+
+        <li class="flip" style="--i:1">
+          <div class="flip-inner">
+            <figure class="face front">
+              <img src="img/photo2.jpg" width="800" height="600" alt="Тод цэнхэр тэнгэр, ногоон тал нутаг, зүүн дээд буланд нар" loading="lazy">
+              <figcaption>Үд дунд</figcaption>
+            </figure>
+            <div class="face back">
+              <h3>Үд дунд</h3>
+              <p>Цэлмэг тэнгэр, хязгааргүй ногоон тал. Сүүдэр богиносч, өнгө хамгийн тод харагддаг цаг.</p>
+            </div>
+          </div>
+          <button class="flip-btn" type="button" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-flip"/></svg><span>Эргүүлэх</span><span class="sr-only"> – Үд дунд</span></button>
+        </li>
+
+        <li class="flip" style="--i:2">
+          <div class="flip-inner">
+            <figure class="face front">
+              <img src="img/photo3.jpg" width="800" height="600" alt="Од дүүрэн шөнийн тэнгэр, сар, харанхуй уулс" loading="lazy">
+              <figcaption>Одтой шөнө</figcaption>
+            </figure>
+            <div class="face back">
+              <h3>Одтой шөнө</h3>
+              <p>Хотын гэрлээс хол, тэнгэрийн од тоолж болохоор тод харагддаг шөнө.</p>
+            </div>
+          </div>
+          <button class="flip-btn" type="button" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-flip"/></svg><span>Эргүүлэх</span><span class="sr-only"> – Одтой шөнө</span></button>
+        </li>
+
+        <li class="flip" style="--i:3">
+          <div class="flip-inner">
+            <figure class="face front">
+              <img src="img/photo4.jpg" width="800" height="600" alt="Шар элсэн манхан, дунд нь цайвар нар" loading="lazy">
+              <figcaption>Говийн элс</figcaption>
+            </figure>
+            <div class="face back">
+              <h3>Говийн элс</h3>
+              <p>Салхинд хэлбэр нь өөрчлөгддөг шар манхнууд, наранд алтлаг гэрэлтдэг.</p>
+            </div>
+          </div>
+          <button class="flip-btn" type="button" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-flip"/></svg><span>Эргүүлэх</span><span class="sr-only"> – Говийн элс</span></button>
+        </li>
+
+        <li class="flip" style="--i:4">
+          <div class="flip-inner">
+            <figure class="face front">
+              <img src="img/photo5.jpg" width="800" height="600" alt="Тал нутгийн дунд цэнхэр нуур, дээр нь цагаан нар" loading="lazy">
+              <figcaption>Нуур ба тал</figcaption>
+            </figure>
+            <div class="face back">
+              <h3>Нуур ба тал</h3>
+              <p>Тэнгэрийн өнгийг толь шиг тусгадаг нуур, эргийн дагуух ногоон бэлчээр.</p>
+            </div>
+          </div>
+          <button class="flip-btn" type="button" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-flip"/></svg><span>Эргүүлэх</span><span class="sr-only"> – Нуур ба тал</span></button>
+        </li>
+
+        <li class="flip" style="--i:5">
+          <div class="flip-inner">
+            <figure class="face front">
+              <img src="img/photo6.jpg" width="800" height="600" alt="Цасаар хучигдсан уулс, мананцартай саарал тэнгэр" loading="lazy">
+              <figcaption>Өвлийн өглөө</figcaption>
+            </figure>
+            <div class="face back">
+              <h3>Өвлийн өглөө</h3>
+              <p>Цасан бүрхүүлтэй уулс, хүйтэн мананцар. Дуу чимээ бараг сонсогдохгүй өглөө.</p>
+            </div>
+          </div>
+          <button class="flip-btn" type="button" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-flip"/></svg><span>Эргүүлэх</span><span class="sr-only"> – Өвлийн өглөө</span></button>
+        </li>
+      </ul>
+    </section>
+
+    <section id="video" class="section alt" aria-labelledby="video-title">
+      <h2 id="video-title">Нар мандах бичлэг</h2>
+      <div class="media-grid">
+        <figure class="video">
+          <video controls preload="metadata" playsinline poster="video/poster.jpg" width="640" height="360">
+            <source src="video/clip.webm" type="video/webm">
+            <source src="video/clip.mp4" type="video/mp4">
+            <track kind="subtitles" src="video/clip.mn.vtt" srclang="mn" label="Монгол" default>
+            <p>Таны хөтөч видео тоглуулахгүй байна. <a href="video/clip.mp4">Бичлэгийг татаж авах</a>.</p>
+          </video>
+          <figcaption>6 секундын бичлэг. Монгол хадмал дуу чимээгүй үед ч утгыг нь ойлгуулна.</figcaption>
+        </figure>
+
+        <figure class="arc-figure">
+          <svg viewBox="0 0 400 170" role="img" aria-labelledby="arc-title arc-desc">
+            <title id="arc-title">Нарны замнал</title>
+            <desc id="arc-desc">Зүүн талаас мандсан нар нуман замаар дээшилж, оройдоо хүрч буй зураг.</desc>
+            <line class="horizon" x1="10" y1="140" x2="390" y2="140"/>
+            <path class="arc" d="M20 140 Q200 -60 380 140" pathLength="1"/>
+            <circle class="sun-dot" cx="200" cy="40" r="11"/>
+          </svg>
+          <figcaption>Нар мандаж, оройдоо хүрнэ.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="map" class="section" aria-labelledby="map-title">
+      <h2 id="map-title">Байршил</h2>
+      <p class="section-lead">Зургуудыг авсан тал нутгийн ойролцоох Улаанбаатар хотын газрын зураг.</p>
+      <div class="map-wrap">
+        <iframe
+          title="Улаанбаатар хотын газрын зураг (OpenStreetMap)"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=106.80%2C47.86%2C107.05%2C47.96&amp;layer=mapnik"
+          width="600" height="400"
+          loading="lazy"
+          referrerpolicy="no-referrer"
+          sandbox="allow-scripts allow-same-origin"></iframe>
+      </div>
+      <p class="map-link"><a href="https://www.openstreetmap.org/#map=12/47.91/106.92" target="_blank" rel="noopener noreferrer">Газрын зургийг шинэ цонхонд нээх</a></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 . Лаб 6: CSS3 animation, transform, custom properties, multimedia.</p>
+  </footer>
+
+</body>
+</html>
